@@ -181,9 +181,6 @@ public class HttpUtil {
         return doHttp(httpPost);
     }
 
-
-
-
     /**
      * 转换请求参数
      *
@@ -191,10 +188,11 @@ public class HttpUtil {
      * @return
      */
     public static List<NameValuePair> covertParams2NVPS(Map<String, Object> params) {
-        List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+        List<NameValuePair> pairs = new ArrayList<>();
 
         for (Map.Entry<String, Object> param : params.entrySet()){
-            pairs.add(new BasicNameValuePair(param.getKey(), String.valueOf(param.getValue())));}
+            pairs.add(new BasicNameValuePair(param.getKey(), String.valueOf(param.getValue())));
+        }
 
         return pairs;
     }
@@ -209,7 +207,6 @@ public class HttpUtil {
     private static String doHttp(HttpRequestBase request) throws Exception {
         // 通过连接池获取连接对象
         CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(cm).build();
-
         return doRequest(httpClient, request);
     }
 
