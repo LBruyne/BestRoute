@@ -3,3 +3,6 @@ server:
 
 wechat:
     token: hinsliu
+
+gaode:
+    key: 34f6a43789a1aead9964cade6af6b9ad

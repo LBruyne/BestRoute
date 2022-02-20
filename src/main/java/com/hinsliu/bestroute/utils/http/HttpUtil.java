@@ -69,9 +69,7 @@ public class HttpUtil {
      * @throws Exception
      */
     public static String httpGet(String url) throws Exception {
-        log.info("请求参数:{}",url);
         HttpGet httpGet = new HttpGet(url);
-
         return doHttp(httpGet);
     }
 
@@ -169,7 +167,6 @@ public class HttpUtil {
      * @throws Exception
      */
     public static String httpPost(String url, Map<String, Object> headers, Map<String, Object> params) throws Exception {
-        log.info("POST请求参数:{}",params);
         HttpPost httpPost = new HttpPost(url);
         // 设置请求参数
         StringEntity entity = new StringEntity(JSON.toJSONString(params),ContentType.APPLICATION_JSON);
